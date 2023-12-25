@@ -23,14 +23,10 @@ export default function Home() {
             <div className="w-full max-w-sm space-y-2 mx-auto">
               <form className="flex justify-center space-x-2">
                 <Link href="/chat">
-                  <Button className="bg-white text-black" type="submit">
-                    Chat
-                  </Button>
+                  <Button className="bg-white text-black">Chat</Button>
                 </Link>
                 <Link href="/bill/history">
-                  <Button className="bg-transparent text-white" type="submit">
-                    History
-                  </Button>
+                  <Button className="bg-transparent text-white">History</Button>
                 </Link>
               </form>
               <p className="text-xs text-zinc-200 dark:text-zinc-100">

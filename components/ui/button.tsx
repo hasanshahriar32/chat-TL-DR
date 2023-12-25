@@ -4,6 +4,22 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { cva } from 'class-variance-authority';
 
+interface ButtonProps {
+  className?: string;
+  variant?:
+    | 'link'
+    | 'default'
+    | 'destructive'
+    | 'outline'
+    | 'secondary'
+    | 'ghost'
+    | null
+    | undefined;
+  size?: string;
+  asChild?: boolean;
+  children: React.ReactNode;
+}
+
 const buttonVariants = cva(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
@@ -34,17 +50,36 @@ const buttonVariants = cva(
 );
 
 const Button = React.forwardRef(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  (
+    {
+      className,
+      variant = 'default',
+      size,
+      asChild = false,
+      children,
+      ...props
+    }: ButtonProps,
+    ref,
+  ) => {
     const Comp = asChild ? Slot : 'button';
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
+        ref={ref as React.RefObject<HTMLButtonElement>}
         {...props}
-      />
+        className={cn(
+          buttonVariants({
+            variant: variant as any,
+            size: size as any,
+            className,
+          }),
+        )}
+      >
+        {children}
+      </Comp>
     );
   },
 );
+
 Button.displayName = 'Button';
 
 export { Button, buttonVariants };
