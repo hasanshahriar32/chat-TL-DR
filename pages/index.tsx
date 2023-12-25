@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import PwaInstall from '@/components/Shared/PwaInstall';
 // import Contact from '@/components/Contact';
 import VideoBanner from '@/components/Shared/VideoBanner';
 import { Button } from '@/components/ui/button';
@@ -25,7 +26,7 @@ export default function Home() {
                 <Link href="/chat">
                   <Button className="bg-white text-black">Chat Now</Button>
                 </Link>
-                <Button className="bg-transparent text-white">Get App</Button>
+                <PwaInstall />
               </form>
               <p className="text-xs text-zinc-200 dark:text-zinc-100">
                 Have more query? - {''}
