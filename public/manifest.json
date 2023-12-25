@@ -30,5 +30,12 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "screenshots" : [
+    {
+      "src": "screenshots/screenshot.png",
+      "sizes": "1280×720",
+      "type": "image/png"
+    }
+  ]
 }
