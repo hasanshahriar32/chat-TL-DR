@@ -20,7 +20,7 @@ const APP_DEFAULT_TITLE = 'Chat-TLDR Ai Assistant';
 const APP_TITLE_TEMPLATE = '%s - App';
 const APP_DESCRIPTION =
   'Chat TLDR helps you summarize any piece of text into concise, easy to digest content so you can free yourself from information overload ⚡.';
-const Open_Graph = '/screenshots/screenshot.png';
+const Open_Graph = 'https://i.ibb.co/khMJdL2/Screenshot-313.png';
 
 function App({ Component, pageProps }: AppProps<{}>) {
   const queryClient = new QueryClient();
