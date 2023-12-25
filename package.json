@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@dqbd/tiktoken": "^1.0.2",
+    "@ducanh2912/next-pwa": "^10.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@tabler/icons-react": "^2.9.0",
     "class-variance-authority": "^0.7.0",
