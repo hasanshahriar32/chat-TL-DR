@@ -39,7 +39,7 @@ const PwaInstall = () => {
         if (choiceResult.outcome === 'accepted') {
           console.log('User accepted the installation');
           toast.error(
-            'The app is still in development stage. Some devices might face flickering issues.',
+            'The app is still in development stage. Some devices might face flickering issues. Please use the website for better experience.',
           );
         } else {
           console.log('User dismissed the installation');
