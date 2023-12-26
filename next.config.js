@@ -15,7 +15,7 @@ const withPWA = require('@ducanh2912/next-pwa').default({
     runtimeCaching: [
       {
         urlPattern: /^https:\/\/chat-tldr\.onrender\.com\/chat/,
-        handler: 'NetworkOnly',
+        handler: 'NetworkFirst',
         options: {
           cacheName: 'chat',
           networkTimeoutSeconds: 1,
