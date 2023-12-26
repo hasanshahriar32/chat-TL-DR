@@ -18,9 +18,7 @@ const PwaInstall = () => {
     // Listen for the beforeinstallprompt event
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     // warn the user if the app is already installed
-    toast.error(
-      'The app is still in development stage. Some devices might face flickering issues.',
-    );
+
     // Cleanup: remove the event listener when the component is unmounted
     return () => {
       window.removeEventListener(
@@ -40,6 +38,9 @@ const PwaInstall = () => {
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
           console.log('User accepted the installation');
+          toast.error(
+            'The app is still in development stage. Some devices might face flickering issues.',
+          );
         } else {
           console.log('User dismissed the installation');
         }

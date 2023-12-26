@@ -388,9 +388,9 @@ export const ChatInput = ({
         >
           ©️ Paradox Tech BD
         </a>
-        .{' '}
+        -{' '}
         {t(
-          'all rights reserved. This is an open source project. Free use for personal & non-profit organization. For commercial use, please contact us.',
+          'all rights reserved. This is an open source project. Free use for personal & non-profit organization. For commercial use, attribution required.',
         )}
       </div>
     </div>
