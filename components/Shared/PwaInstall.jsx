@@ -27,27 +27,33 @@ const PwaInstall = () => {
       );
     };
   }, []);
-
   const handleInstallClick = (event) => {
     event.preventDefault();
-    if (deferredPrompt) {
-      // Show the installation prompt
-      deferredPrompt.prompt();
 
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the installation');
-          toast.error(
-            'The app is still in development stage. Some devices might face flickering issues. Please use the website for better experience.',
-          );
-        } else {
-          console.log('User dismissed the installation');
-        }
+    // Display confirmation alert to install from the user
+    if (
+      window.confirm(
+        'The app is still in development stage. Some devices might face flickering issues. Please use the website for better experience. Click OK to continue.',
+      )
+    ) {
+      if (deferredPrompt) {
+        // Show the installation prompt
+        deferredPrompt.prompt();
 
-        // Reset the deferredPrompt variable
-        setDeferredPrompt(null);
-      });
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the installation');
+            // Notify the user that the installation was successful
+            toast.success('App installed successfully!');
+          } else {
+            console.log('User dismissed the installation');
+          }
+
+          // Reset the deferredPrompt variable
+          setDeferredPrompt(null);
+        });
+      }
     }
   };
 
