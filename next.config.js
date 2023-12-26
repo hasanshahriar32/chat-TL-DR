@@ -12,7 +12,16 @@ const withPWA = require('@ducanh2912/next-pwa').default({
   workboxOptions: {
     disableDevLogs: true,
     // exclude custom routes from caching
-    exclude: ['/chat', '/chat/[id]'],
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/chat-tldr\.onrender\.com\/chat/,
+        handler: 'NetworkOnly',
+        options: {
+          cacheName: 'chat',
+          networkTimeoutSeconds: 1,
+        },
+      },
+    ],
   },
 });
 const nextConfig = {
