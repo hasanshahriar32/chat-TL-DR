@@ -3,8 +3,10 @@ const { i18n } = require('./next-i18next.config');
 /** @type {import('next').NextConfig} */
 const withPWA = require('@ducanh2912/next-pwa').default({
   dest: 'public',
-  cacheOnFrontEndNav: false,
+  cacheOnFrontEndNav: true,
   aggressiveFrontEndNavCaching: false,
+  // exclude custom routes from caching
+  exclude: ['/chat', '/chat/[id]'],
   reloadOnOnline: true,
   swcMinify: true,
   disable: process.env.NODE_ENV === 'development',

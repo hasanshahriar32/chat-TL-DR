@@ -1,5 +1,6 @@
 // PwaInstall.js
 import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 import { Button } from '@/components/ui/button';
 
@@ -16,7 +17,10 @@ const PwaInstall = () => {
 
     // Listen for the beforeinstallprompt event
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
+    // warn the user if the app is already installed
+    toast.error(
+      'The app is still in development stage. Some devices might face flickering issues.',
+    );
     // Cleanup: remove the event listener when the component is unmounted
     return () => {
       window.removeEventListener(
