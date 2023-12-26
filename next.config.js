@@ -16,6 +16,9 @@ const withPWA = require('@ducanh2912/next-pwa').default({
 const nextConfig = {
   i18n,
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
 
   webpack(config, { isServer, dev }) {
     config.experiments = {
