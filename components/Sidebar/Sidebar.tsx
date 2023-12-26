@@ -1,6 +1,13 @@
-import { IconFolderPlus, IconMistOff, IconPlus } from '@tabler/icons-react';
+import {
+  IconFolderPlus,
+  IconHomeShare,
+  IconMistOff,
+  IconPlus,
+} from '@tabler/icons-react';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import Link from 'next/link';
 
 import {
   CloseSidebarButton,
@@ -61,7 +68,7 @@ const Sidebar = <T,>({
       >
         <div className="flex items-center">
           <button
-            className="text-sidebar flex w-[190px] flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-md border border-white/20 p-3 text-white transition-colors duration-200 hover:bg-gray-500/10"
+            className="text-sidebar flex w-[145px] flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-md border border-white/20 p-3 text-white transition-colors duration-200 hover:bg-gray-500/10"
             onClick={() => {
               handleCreateItem();
               handleSearchTerm('');
@@ -77,6 +84,11 @@ const Sidebar = <T,>({
           >
             <IconFolderPlus size={16} />
           </button>
+          <Link href="/">
+            <button className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 rounded-md border border-white/20 p-3 text-sm text-white transition-colors duration-200 hover:bg-gray-500/10">
+              <IconHomeShare size={16} />
+            </button>
+          </Link>
         </div>
         <Search
           placeholder={t('Search...') || ''}
