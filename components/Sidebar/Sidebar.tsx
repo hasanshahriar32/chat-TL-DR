@@ -7,7 +7,7 @@ import {
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Link from 'next/link';
+import useRedirect from '@/hooks/useRedirect';
 
 import {
   CloseSidebarButton,
@@ -84,11 +84,13 @@ const Sidebar = <T,>({
           >
             <IconFolderPlus size={16} />
           </button>
-          <Link href="/">
-            <button className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 rounded-md border border-white/20 p-3 text-sm text-white transition-colors duration-200 hover:bg-gray-500/10">
-              <IconHomeShare size={16} />
-            </button>
-          </Link>
+          <button
+            className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 rounded-md border border-white/20 p-3 text-sm text-white transition-colors duration-200 hover:bg-gray-500/10"
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            onClick={() => useRedirect('/')}
+          >
+            <IconHomeShare size={16} />
+          </button>
         </div>
         <Search
           placeholder={t('Search...') || ''}

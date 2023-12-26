@@ -355,7 +355,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
             Welcome to Chat-TLDR
           </div>
           <div className="text-center text-lg text-black dark:text-white">
-            <div className="mb-8">{`Chat-TLDR is an open source clone of OpenAI's ChatGPT UI.`}</div>
+            <div className="mb-8">{`Chat-TLDR's chat ui is a clone of open source project Chatbot UI.`}</div>
             <div className="mb-2 font-bold">
               Important: Chat-TLDR is 100% unaffiliated with OpenAI.
             </div>
